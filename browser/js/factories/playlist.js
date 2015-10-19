@@ -27,6 +27,17 @@ app.factory('PlaylistFactory', function($http) {
 				console.dir(response.data);
 				return response.data
 			})
+		},
+
+		fetchAllSongs: function() {
+			return $http.get('/api/songs')
+			.then(function(response) {
+				return response.data
+			})
+		},
+
+		addSong: function(playlistId, song) {
+			$http.post('/api/playlists/' + playlistId + '/songs', song)
 		}
 	}
 	console.log("Playlist factory was called")

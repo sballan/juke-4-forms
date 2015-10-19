@@ -7,7 +7,6 @@ app.controller('NewPlaylistCtrl', function($scope, $state, PlaylistFactory) {
 		}
 		var defaultForm = {playlistInput: ""}
 
-		var newPlaylistId;
 		return PlaylistFactory.create($scope.playlist)
 		.then(function(playlist) {
 			$scope.playlistForm.$setPristine();
