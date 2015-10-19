@@ -1,16 +1,5 @@
-app.controller('PlaylistCtrl', function($scope, PlaylistFactory) {
+app.controller('PlaylistCtrl', function ($scope, $stateParams, PlaylistFactory, thePlaylist) {
 
-	$scope.printInput = function() {
-		if($scope.playlistForm.$invalid) {
-			console.error("You inputted the wrong thing fool!")
-			return false;
-		}
-		var defaultForm = {playlistInput: ""}
+  $scope.playlist = thePlaylist;
 
-		PlaylistFactory.create($scope.playlist)
-		$scope.playlistForm.$setPristine();
-
-		$scope.playlist = angular.copy(defaultForm)
-
-	}
-})
+});
